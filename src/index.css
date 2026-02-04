@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import "tailwindcss";
+
+
+:root {
+  font-family: "League Spartan", sans-serif;
+  /* Imagen de fondo */
+  background-image: url(https://4kwallpapers.com/images/wallpapers/lofi-japanese-3840x2160-14884.jpg);
+    
+  /* Propiedades para que no se repita y cubra todo */
+  background-repeat: no-repeat;
+  background-size: cover;      /* Hace que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Opcional: el fondo se queda quieto al hacer scroll */
+
+  /* Asegura que el body mida al menos el alto de la pantalla */
+  min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+
