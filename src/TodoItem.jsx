@@ -1,8 +1,11 @@
-function TodoItem({text,completed}){
+function TodoItem({text,completed,onComplete,onDelete}){
     return(
       <div className={`flex w-full justify-between align-center gap-4 py-2 px-8 border-y-2 border-gray-200 ${completed && 'bg-green-300'}`}>
 
-        <svg className="self-center" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg 
+          className="self-center" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          onClick={onComplete}
+          >
           <g id="Iconly/Regular/Bulk/Tick Square">
             <g id="Tick Square">
               <path id="Fill 1" opacity="0.4" d="M16.3402 1.9998H7.67024C4.28024 1.9998 2.00024 4.3798 2.00024 7.9198V16.0898C2.00024 19.6198 4.28024 21.9998 7.67024 21.9998H16.3402C19.7302 21.9998 22.0002 19.6198 22.0002 16.0898V7.9198C22.0002 4.3798 19.7302 1.9998 16.3402 1.9998Z" fill="green"/>
@@ -13,7 +16,10 @@ function TodoItem({text,completed}){
 
         <p className={`font-normal text-lg  ${completed && 'text-zinc-400'} `}>{text}</p>
 
-        <svg className="self-center" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg 
+          className="self-center" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          onClick={onDelete}
+          >
           <g id="Iconly/Regular/Bulk/Delete">
             <g id="Delete">
               <path id="Fill 1" opacity={`${completed ? '0.2' : '1'}`} d="M19.6432 9.48844C19.6432 9.55644 19.1103 16.2972 18.8059 19.1341C18.6152 20.875 17.4929 21.931 15.8094 21.961C14.5159 21.99 13.2497 22 12.0038 22C10.6812 22 9.38766 21.99 8.13209 21.961C6.50501 21.922 5.38171 20.845 5.20082 19.1341C4.88766 16.2872 4.36442 9.55644 4.3547 9.48844C4.34497 9.28345 4.41111 9.08846 4.54532 8.93046C4.67758 8.78447 4.8682 8.69647 5.06855 8.69647H18.9391C19.1385 8.69647 19.3194 8.78447 19.4623 8.93046C19.5956 9.08846 19.6627 9.28345 19.6432 9.48844Z" fill="red"/>
