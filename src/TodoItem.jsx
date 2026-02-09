@@ -1,32 +1,18 @@
+import {CompleteIcon} from "./CompleteIcon"
+import {DeleteIcon} from "./DeleteIcon"
+
+
 function TodoItem({text,completed,onComplete,onDelete}){
     return(
       <div className={`flex w-full justify-between align-center gap-4 py-2 px-8 border-y-2 border-gray-200 ${completed && 'bg-green-300'}`}>
 
-        <svg 
-          className="self-center" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-          onClick={onComplete}
-          >
-          <g id="Iconly/Regular/Bulk/Tick Square">
-            <g id="Tick Square">
-              <path id="Fill 1" opacity="0.4" d="M16.3402 1.9998H7.67024C4.28024 1.9998 2.00024 4.3798 2.00024 7.9198V16.0898C2.00024 19.6198 4.28024 21.9998 7.67024 21.9998H16.3402C19.7302 21.9998 22.0002 19.6198 22.0002 16.0898V7.9198C22.0002 4.3798 19.7302 1.9998 16.3402 1.9998Z" fill="green"/>
-              <path id="Fill 4" d="M10.8133 15.2479C10.5893 15.2479 10.3653 15.1629 10.1943 14.9919L7.82132 12.6189C7.47932 12.2769 7.47932 11.7229 7.82132 11.3819C8.16332 11.0399 8.71632 11.0389 9.05832 11.3809L10.8133 13.1359L14.9413 9.0079C15.2833 8.6659 15.8363 8.6659 16.1783 9.0079C16.5203 9.3499 16.5203 9.9039 16.1783 10.2459L11.4323 14.9919C11.2613 15.1629 11.0373 15.2479 10.8133 15.2479Z" fill="green"/>
-            </g>
-          </g>
-        </svg>
+        <CompleteIcon onComplete={onComplete}/>
+
 
         <p className={`font-normal text-lg  ${completed && 'text-zinc-400'} `}>{text}</p>
 
-        <svg 
-          className="self-center" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-          onClick={onDelete}
-          >
-          <g id="Iconly/Regular/Bulk/Delete">
-            <g id="Delete">
-              <path id="Fill 1" opacity={`${completed ? '0.2' : '1'}`} d="M19.6432 9.48844C19.6432 9.55644 19.1103 16.2972 18.8059 19.1341C18.6152 20.875 17.4929 21.931 15.8094 21.961C14.5159 21.99 13.2497 22 12.0038 22C10.6812 22 9.38766 21.99 8.13209 21.961C6.50501 21.922 5.38171 20.845 5.20082 19.1341C4.88766 16.2872 4.36442 9.55644 4.3547 9.48844C4.34497 9.28345 4.41111 9.08846 4.54532 8.93046C4.67758 8.78447 4.8682 8.69647 5.06855 8.69647H18.9391C19.1385 8.69647 19.3194 8.78447 19.4623 8.93046C19.5956 9.08846 19.6627 9.28345 19.6432 9.48844Z" fill="red"/>
-              <path id="Fill 4" opacity={`${completed ? '0.2' : '1'}`} d="M21 5.97686C21 5.56588 20.6761 5.24389 20.2871 5.24389H17.3714C16.7781 5.24389 16.2627 4.8219 16.1304 4.22692L15.967 3.49795C15.7385 2.61698 14.9498 2 14.0647 2H9.93624C9.0415 2 8.26054 2.61698 8.02323 3.54595L7.87054 4.22792C7.7373 4.8219 7.22185 5.24389 6.62957 5.24389H3.71385C3.32386 5.24389 3 5.56588 3 5.97686V6.35685C3 6.75783 3.32386 7.08982 3.71385 7.08982H20.2871C20.6761 7.08982 21 6.75783 21 6.35685V5.97686Z" fill="red"/>
-            </g>
-          </g>
-        </svg>
+        <DeleteIcon onDelete={onDelete} completed={completed}/>
+
 
 
 

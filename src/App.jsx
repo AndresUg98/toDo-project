@@ -8,16 +8,25 @@ import { CreateTodoButton } from './CreateTodoButton'
 import './App.css'
 
 
-const defaultTodos = [
-  {text:'Cortar cebolla', completed:true},
-  {text:'Limpiar la casa', completed:true},
-  {text:'Llorar con la llorona', completed:false},
-  {text:'Estudiar', completed:true},
-]
+// const defaultTodos = [
+//   {text:'Cortar cebolla', completed:true},
+//   {text:'Limpiar la casa', completed:true},
+//   {text:'Llorar con la llorona', completed:false},
+//   {text:'Estudiar', completed:true},
+// ]
+
+
+//localStorage.setItem('TODOS_V1', defaultTodos);
+
+//localStorage.removeItem('TODOS_V1');
+
+
 
 function App() {
 
-  const [todos, setTodos] = useState(defaultTodos)
+  let parsedTodos = localStorage.getItem('TODOS_V1')
+
+  const [todos, setTodos] = useState(parsedTodos)
   const [searchValue,setSearchValue] = useState("")
 
   //Getting how many todos do we have that have the "completed" atribute on "true"
