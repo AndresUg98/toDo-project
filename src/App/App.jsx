@@ -3,10 +3,6 @@ import { useLocalStorage } from '../Hooks/uselocalStorage/index'
 import './App.css'
 import {AppUI} from "./AppUI";
 
-
-
-
-
 function App() {
 
   const [todos, saveTodos] = useLocalStorage('TODOS_V1', [])
@@ -31,8 +27,6 @@ function App() {
     }
   )
   
-
-
   // Función para marcar un todo como completado
   const completeTodo = (text) => {
     // Crea una copia del arreglo de todos actual
