@@ -1,5 +1,5 @@
-import {CompleteIcon} from "./CompleteIcon"
-import {DeleteIcon} from "./DeleteIcon"
+import {CompleteIcon} from "../CompleteIcon/"
+import {DeleteIcon} from "../DeleteIcon/"
 
 
 function TodoItem({text,completed,onComplete,onDelete}){
